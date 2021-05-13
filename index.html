@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Samhith's multiplication</title>
+
+</head>
+
+<body style="text-align: center">
+
+	<h1>Samhith's multiplication practise webpage</h1>
+
+	<p>Click the button to display a question.</p>
+
+	<button onclick="display_question()">Try it</button>
+	
+	<p style="font-size: 25px;" id="question"></p>
+	<p style="font-size: 25px;" id="answer"></p>
+
+	<script>
+	
+	var a;
+	var b; 
+	var ans;
+	
+	function display_question() 
+	{ 
+	  a = Math.floor((Math.random() * 5) + 1);
+	  b = Math.floor((Math.random() * 10) + 1);
+	  ans = a * b;
+	  document.getElementById("question").innerHTML =  a + " X " + b + " = ?";
+	  document.getElementById("answer").style.display =  'none';
+
+	  setTimeout(display_answer, 1500);
+	}
+
+	function display_answer()
+	{
+		document.getElementById("answer").style.display =  'block';
+	  	document.getElementById("answer").innerHTML =  ans;
+	}
+
+</script>
+</body>
+</html>
